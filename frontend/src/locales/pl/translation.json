@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Turysta Checkin",
+    "subtitle": "Automatyczny system wiadomości do zameldowania"
+  },
+  "login": {
+    "title": "Logowanie",
+    "email": "Email",
+    "password": "Hasło",
+    "loginButton": "Zaloguj się",
+    "registerLink": "Nie masz konta? Utwórz nowe",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "confirmationSuccess": "Email potwierdzony pomyślnie! Możesz się teraz zalogować."
+  },
+  "register": {
+    "title": "Utwórz nowe konto",
+    "name": "Pełne imię i nazwisko",
+    "email": "Email",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "registerButton": "Utwórz konto",
+    "loginLink": "Masz już konto? Zaloguj się",
+    "success": "Konto utworzone pomyślnie! Sprawdź email, aby potwierdzić swoje konto."
+  },
+  "forgotPassword": {
+    "title": "Resetowanie hasła",
+    "description": "Wprowadź adres email powiązany z Twoim kontem. Otrzymasz email z instrukcjami resetowania hasła.",
+    "email": "Adres email",
+    "cancelButton": "Anuluj",
+    "submitButton": "Wyślij",
+    "success": "Email z instrukcjami resetowania hasła został wysłany na podany adres."
+  },
+  "tabs": {
+    "hotels": "Hotele",
+    "rooms": "Pokoje",
+    "sendMessage": "Wyślij wiadomość",
+    "messages": "Wiadomości / Statystyki"
+  },
+  "hotels": {
+    "title": "Twoje hotele",
+    "addButton": "Dodaj nowy hotel",
+    "addTitle": "Dodaj nowy hotel",
+    "editTitle": "Edytuj hotel",
+    "name": "Nazwa hotelu",
+    "nameHelp": "Nazwa hotelu lub obiektu",
+    "nameRequired": "Nazwa hotelu jest wymagana",
+    "address": "Adres",
+    "addressHelp": "Pełny adres hotelu",
+    "phone": "Telefon",
+    "phoneHelp": "Numer telefonu kontaktowego",
+    "phoneNotSpecified": "Telefon nie określony",
+    "email": "Email",
+    "emailHelp": "Adres email kontaktowy",
+    "emailNotSpecified": "Email nie określony",
+    "description": "Opis",
+    "descriptionHelp": "Krótki opis hotelu (opcjonalnie)",
+    "actions": "Akcje",
+    "editButton": "Edytuj",
+    "deleteButton": "Usuń",
+    "viewRoomsButton": "Zobacz pokoje",
+    "noHotels": "Nie dodałeś jeszcze żadnego hotelu",
+    "addFirstHotel": "Dodaj swój pierwszy hotel, aby rozpocząć zarządzanie pokojami i wiadomościami check-in.",
+    "updateSuccess": "Hotel zaktualizowany pomyślnie!",
+    "addSuccess": "Hotel dodany pomyślnie!"
+  },
+  "rooms": {
+    "title": "Zarządzaj pokojami",
+    "addButton": "Dodaj pokój",
+    "name": "Nazwa",
+    "calendarUrl": "URL kalendarza",
+    "whatsappNumber": "Numer WhatsApp",
+    "templateName": "Nazwa szablonu",
+    "actions": "Akcje",
+    "editButton": "Edytuj",
+    "deleteButton": "Usuń",
+    "settings": "Ustawienia",
+    "autoSend": "Automatyczne wysyłanie",
+    "sendTime": "Czas wysyłania"
+  },
+  "sendMessage": {
+    "title": "Wyślij wiadomość ręcznie",
+    "hotel": "Hotel",
+    "room": "Pokój",
+    "guestName": "Imię gościa",
+    "phone": "Telefon",
+    "template": "Szablon",
+    "sendButton": "Wyślij wiadomość",
+    "success": "Wiadomość wysłana pomyślnie!"
+  },
+  "messages": {
+    "title": "Historia wiadomości",
+    "hotel": "Hotel",
+    "room": "Pokój",
+    "date": "Data",
+    "template": "Szablon",
+    "status": "Status",
+    "content": "Treść",
+    "filterButton": "Filtruj",
+    "resetButton": "Resetuj",
+    "statsTitle": "Statystyki wiadomości",
+    "totalMessages": "Łączna liczba wiadomości"
+  },
+  "common": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "add": "Dodaj",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "reset": "Resetuj",
+    "yes": "Tak",
+    "no": "Nie",
+    "success": "Sukces",
+    "error": "Błąd",
+    "loading": "Ładowanie...",
+    "noData": "Brak danych",
+    "logout": "Wyloguj",
+    "profile": "Profil",
+    "language": "Język"
+  },
+  "languages": {
+    "ro": "Rumuński",
+    "en": "Angielski",
+    "de": "Niemiecki",
+    "hu": "Węgierski",
+    "pl": "Polski"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Tourist Checkin",
+    "subtitle": "Automated check-in messaging system"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Login",
+    "registerLink": "Don't have an account? Create one",
+    "forgotPassword": "Forgot password?",
+    "confirmationSuccess": "Email confirmed successfully! You can now log in."
+  },
+  "register": {
+    "title": "Create new account",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "registerButton": "Create account",
+    "loginLink": "Already have an account? Log in",
+    "success": "Account created successfully! Check your email to confirm your account."
+  },
+  "forgotPassword": {
+    "title": "Reset password",
+    "description": "Enter the email address associated with your account. You will receive an email with instructions to reset your password.",
+    "email": "Email address",
+    "cancelButton": "Cancel",
+    "submitButton": "Submit",
+    "success": "An email with instructions to reset your password has been sent to the specified address."
+  },
+  "tabs": {
+    "hotels": "Hotels",
+    "rooms": "Rooms",
+    "sendMessage": "Send Message",
+    "messages": "Messages / Statistics"
+  },
+  "hotels": {
+    "title": "Your Hotels",
+    "addButton": "Add new hotel",
+    "addTitle": "Add new hotel",
+    "editTitle": "Edit hotel",
+    "name": "Hotel name",
+    "nameHelp": "Name of the hotel or property",
+    "nameRequired": "Hotel name is required",
+    "address": "Address",
+    "addressHelp": "Complete address of the hotel",
+    "phone": "Phone",
+    "phoneHelp": "Contact phone number",
+    "phoneNotSpecified": "Phone not specified",
+    "email": "Email",
+    "emailHelp": "Contact email address",
+    "emailNotSpecified": "Email not specified",
+    "description": "Description",
+    "descriptionHelp": "A short description of the hotel (optional)",
+    "actions": "Actions",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "viewRoomsButton": "View rooms",
+    "noHotels": "You haven't added any hotels yet",
+    "addFirstHotel": "Add your first hotel to start managing rooms and check-in messages.",
+    "updateSuccess": "Hotel updated successfully!",
+    "addSuccess": "Hotel added successfully!"
+  },
+  "rooms": {
+    "title": "Manage rooms",
+    "addButton": "Add room",
+    "name": "Name",
+    "calendarUrl": "Calendar URL",
+    "whatsappNumber": "WhatsApp Number",
+    "templateName": "Template name",
+    "actions": "Actions",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "settings": "Settings",
+    "autoSend": "Auto send",
+    "sendTime": "Send time"
+  },
+  "sendMessage": {
+    "title": "Send manual message",
+    "hotel": "Hotel",
+    "room": "Room",
+    "guestName": "Guest name",
+    "phone": "Phone",
+    "template": "Template",
+    "sendButton": "Send message",
+    "success": "Message sent successfully!"
+  },
+  "messages": {
+    "title": "Message history",
+    "hotel": "Hotel",
+    "room": "Room",
+    "date": "Date",
+    "template": "Template",
+    "status": "Status",
+    "content": "Content",
+    "filterButton": "Filter",
+    "resetButton": "Reset",
+    "statsTitle": "Message statistics",
+    "totalMessages": "Total messages"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "yes": "Yes",
+    "no": "No",
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "noData": "No data",
+    "logout": "Logout",
+    "profile": "Profile",
+    "language": "Language"
+  },
+  "languages": {
+    "ro": "Romanian",
+    "en": "English",
+    "de": "German",
+    "hu": "Hungarian",
+    "pl": "Polish"
+  }
+}

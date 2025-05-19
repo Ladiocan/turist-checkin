@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//SC Turist in Transilvania SRL//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:8987
+DTSTAMP:20250505T142948Z
+TRANSP:OPAQUE
+DTSTART:20251114T000000Z
+DTEND:20251116T000000Z
+SUMMARY:CLOSED - [7598] Barza Teatru 
+SEQUENCE:0
+DESCRIPTION:Type: individual\nCompany Name: \nCompany Fiscal Code: \nCompany Bank Account: \nCompany Bank Name: \nCompany VAT Number: \nFirst Name: Barza\nLast Name: Teatru\nID Card Number: \nEmail: \nPhone: \nAddress: \nCountry: Romania\nNotes: 
+END:VEVENT
+BEGIN:VEVENT
+UID:9241
+DTSTAMP:20250505T142948Z
+TRANSP:OPAQUE
+DTSTART:20250501T000000Z
+DTEND:20250502T000000Z
+SUMMARY:CLOSED - [7788] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40740680770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+BEGIN:VEVENT
+UID:9290
+DTSTAMP:20250505T142948Z
+TRANSP:OPAQUE
+DTSTART:20250506T000000Z
+DTEND:20250508T000000Z
+SUMMARY:CLOSED - [7807] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40740680770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+X-MICROSOFT-CALSCALE:GREGORIAN
+END:VCALENDAR

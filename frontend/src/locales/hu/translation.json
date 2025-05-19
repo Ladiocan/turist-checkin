@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Turista Bejelentkezés",
+    "subtitle": "Automatikus bejelentkezési üzenetküldő rendszer"
+  },
+  "login": {
+    "title": "Bejelentkezés",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "loginButton": "Bejelentkezés",
+    "registerLink": "Nincs fiókja? Hozzon létre egyet",
+    "forgotPassword": "Elfelejtette jelszavát?",
+    "confirmationSuccess": "E-mail sikeresen megerősítve! Most már bejelentkezhet."
+  },
+  "register": {
+    "title": "Új fiók létrehozása",
+    "name": "Teljes név",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "confirmPassword": "Jelszó megerősítése",
+    "registerButton": "Fiók létrehozása",
+    "loginLink": "Már van fiókja? Jelentkezzen be",
+    "success": "Fiók sikeresen létrehozva! Ellenőrizze e-mailjét a fiók megerősítéséhez."
+  },
+  "forgotPassword": {
+    "title": "Jelszó visszaállítása",
+    "description": "Adja meg a fiókjához társított e-mail címet. Kapni fog egy e-mailt a jelszó visszaállításához szükséges utasításokkal.",
+    "email": "E-mail cím",
+    "cancelButton": "Mégse",
+    "submitButton": "Küldés",
+    "success": "A jelszó visszaállításához szükséges utasításokat tartalmazó e-mailt elküldtük a megadott címre."
+  },
+  "tabs": {
+    "hotels": "Szállodák",
+    "rooms": "Szobák",
+    "sendMessage": "Üzenet küldése",
+    "messages": "Üzenetek / Statisztikák"
+  },
+  "hotels": {
+    "title": "Az Ön szállodái",
+    "addButton": "Új szálloda hozzáadása",
+    "addTitle": "Új szálloda hozzáadása",
+    "editTitle": "Szálloda szerkesztése",
+    "name": "Szálloda neve",
+    "nameHelp": "A szálloda vagy szálláshely neve",
+    "nameRequired": "A szálloda neve kötelező",
+    "address": "Cím",
+    "addressHelp": "A szálloda teljes címe",
+    "phone": "Telefon",
+    "phoneHelp": "Kapcsolattartó telefonszám",
+    "phoneNotSpecified": "Telefon nincs megadva",
+    "email": "E-mail",
+    "emailHelp": "Kapcsolattartó e-mail címe",
+    "emailNotSpecified": "E-mail nincs megadva",
+    "description": "Leírás",
+    "descriptionHelp": "A szálloda rövid leírása (opcionális)",
+    "actions": "Műveletek",
+    "editButton": "Szerkesztés",
+    "deleteButton": "Törlés",
+    "viewRoomsButton": "Szobák megtekintése",
+    "noHotels": "Még nem adott hozzá szállodát",
+    "addFirstHotel": "Adja hozzá első szállodáját, hogy elkezdhesse a szobák és bejelentkezési üzenetek kezelését.",
+    "updateSuccess": "Szálloda sikeresen frissítve!",
+    "addSuccess": "Szálloda sikeresen hozzáadva!"
+  },
+  "rooms": {
+    "title": "Szobák kezelése",
+    "addButton": "Szoba hozzáadása",
+    "name": "Név",
+    "calendarUrl": "Naptár URL",
+    "whatsappNumber": "WhatsApp szám",
+    "templateName": "Sablon neve",
+    "actions": "Műveletek",
+    "editButton": "Szerkesztés",
+    "deleteButton": "Törlés",
+    "settings": "Beállítások",
+    "autoSend": "Automatikus küldés",
+    "sendTime": "Küldési idő"
+  },
+  "sendMessage": {
+    "title": "Kézi üzenet küldése",
+    "hotel": "Szálloda",
+    "room": "Szoba",
+    "guestName": "Vendég neve",
+    "phone": "Telefon",
+    "template": "Sablon",
+    "sendButton": "Üzenet küldése",
+    "success": "Üzenet sikeresen elküldve!"
+  },
+  "messages": {
+    "title": "Üzenet előzmények",
+    "hotel": "Szálloda",
+    "room": "Szoba",
+    "date": "Dátum",
+    "template": "Sablon",
+    "status": "Állapot",
+    "content": "Tartalom",
+    "filterButton": "Szűrés",
+    "resetButton": "Visszaállítás",
+    "statsTitle": "Üzenet statisztikák",
+    "totalMessages": "Összes üzenet"
+  },
+  "common": {
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "add": "Hozzáadás",
+    "search": "Keresés",
+    "filter": "Szűrés",
+    "reset": "Visszaállítás",
+    "yes": "Igen",
+    "no": "Nem",
+    "success": "Siker",
+    "error": "Hiba",
+    "loading": "Betöltés...",
+    "noData": "Nincs adat",
+    "logout": "Kijelentkezés",
+    "profile": "Profil",
+    "language": "Nyelv"
+  },
+  "languages": {
+    "ro": "Román",
+    "en": "Angol",
+    "de": "Német",
+    "hu": "Magyar",
+    "pl": "Lengyel"
+  }
+}

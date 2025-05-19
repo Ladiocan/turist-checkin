@@ -1,0 +1,77 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//SC Turist in Transilvania SRL//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:8987
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20251114T000000Z
+DTEND:20251116T000000Z
+SUMMARY:CLOSED - [7598] Barza Teatru 
+SEQUENCE:0
+DESCRIPTION:Type: individual\nCompany Name: \nCompany Fiscal Code: \nCompany Bank Account: \nCompany Bank Name: \nCompany VAT Number: \nFirst Name: Barza\nLast Name: Teatru\nID Card Number: \nEmail: \nPhone: \nAddress: \nCountry: Romania\nNotes: 
+END:VEVENT
+BEGIN:VEVENT
+UID:9241
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250501T000000Z
+DTEND:20250502T000000Z
+SUMMARY:CLOSED - [7788] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40 749 680 770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+BEGIN:VEVENT
+UID:9290
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250506T000000Z
+DTEND:20250508T000000Z
+SUMMARY:CLOSED - [7807] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40 749 680 770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+BEGIN:VEVENT
+UID:9309
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250512T000000Z
+DTEND:20250515T000000Z
+SUMMARY:CLOSED - [7819] Elena Moga Patria Bank SA
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: Patria Bank SA\nCompany Fiscal Code: RO11447021\nCompany Bank Account: \nCompany Bank Name: \nCompany VAT Number: J40/9252/2016\nFirst Name: Elena\nLast Name: Moga\nID Card Number: \nEmail: \nPhone: \nAddress: Soseaua Pipera 42\, Globalworth Plaza\, et.8\,10\, Bucuresti\nCountry: Romania\nNotes: 
+END:VEVENT
+BEGIN:VEVENT
+UID:9313
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250524T000000Z
+DTEND:20250525T000000Z
+SUMMARY:CLOSED - [7828] Ciprian Ungureanu 
+SEQUENCE:0
+DESCRIPTION:Type: individual\nCompany Name: \nCompany Fiscal Code: \nCompany Bank Account: \nCompany Bank Name: \nCompany VAT Number: \nFirst Name: Ciprian\nLast Name: Ungureanu\nID Card Number: \nEmail: \nPhone: 0040 743 929 373\nAddress: \nCountry: Romania\nNotes: 
+END:VEVENT
+BEGIN:VEVENT
+UID:9343
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250516T000000Z
+DTEND:20250517T000000Z
+SUMMARY:CLOSED - [7839] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40 749 680 770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+BEGIN:VEVENT
+UID:9347
+DTSTAMP:20250519T111145Z
+TRANSP:OPAQUE
+DTSTART:20250519T000000Z
+DTEND:20250520T000000Z
+SUMMARY:CLOSED - [7843] Ladislau Ciocan TiT srl
+SEQUENCE:0
+DESCRIPTION:Type: company\nCompany Name: TiT srl\nCompany Fiscal Code: ro1111111\nCompany Bank Account: ROXXXXXXXXXXXXXX\nCompany Bank Name: Banca Trans\nCompany VAT Number: J32/6262/2099\nFirst Name: Ladislau\nLast Name: Ciocan\nID Card Number: SB988049\nEmail: laci.ciocan@gmail.com\nPhone: +40 749 680 770\nAddress: Medias\, Stadionului 14\nCountry: Romania\nNotes: camera mare
+END:VEVENT
+X-MICROSOFT-CALSCALE:GREGORIAN
+END:VCALENDAR

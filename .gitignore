@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.sqlite3
+*.db
+*.sqlite
+
+# FastAPI/Env
+.env
+.env.*
+*.env
+*.env.local
+*.env.*.local
+
+# Node/React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+frontend/.env.*.local
+
+# Logs
+*.log
+
+# VSCode/JetBrains
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test/coverage
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Misc
+*.bak
+*.swp
+*.tmp
+
+# Ignore local settings
+*.local

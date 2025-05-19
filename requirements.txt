@@ -1,0 +1,6 @@
+requests
+python-dotenv
+openai
+schedule
+icalendar
+# Pentru WhatsApp API (adaugă pachetul potrivit când integrezi)

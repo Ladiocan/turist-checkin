@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Tourist Checkin",
+    "subtitle": "Automatisches Check-in-Nachrichtensystem"
+  },
+  "login": {
+    "title": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "loginButton": "Anmelden",
+    "registerLink": "Kein Konto? Erstellen Sie eines",
+    "forgotPassword": "Passwort vergessen?",
+    "confirmationSuccess": "E-Mail erfolgreich bestätigt! Sie können sich jetzt anmelden."
+  },
+  "register": {
+    "title": "Neues Konto erstellen",
+    "name": "Vollständiger Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "registerButton": "Konto erstellen",
+    "loginLink": "Haben Sie bereits ein Konto? Anmelden",
+    "success": "Konto erfolgreich erstellt! Überprüfen Sie Ihre E-Mail, um Ihr Konto zu bestätigen."
+  },
+  "forgotPassword": {
+    "title": "Passwort zurücksetzen",
+    "description": "Geben Sie die mit Ihrem Konto verknüpfte E-Mail-Adresse ein. Sie erhalten eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts.",
+    "email": "E-Mail-Adresse",
+    "cancelButton": "Abbrechen",
+    "submitButton": "Absenden",
+    "success": "Eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts wurde an die angegebene Adresse gesendet."
+  },
+  "tabs": {
+    "hotels": "Hotels",
+    "rooms": "Zimmer",
+    "sendMessage": "Nachricht senden",
+    "messages": "Nachrichten / Statistiken"
+  },
+  "hotels": {
+    "title": "Ihre Hotels",
+    "addButton": "Neues Hotel hinzufügen",
+    "addTitle": "Neues Hotel hinzufügen",
+    "editTitle": "Hotel bearbeiten",
+    "name": "Hotelname",
+    "nameHelp": "Name des Hotels oder der Unterkunft",
+    "nameRequired": "Hotelname ist erforderlich",
+    "address": "Adresse",
+    "addressHelp": "Vollständige Adresse des Hotels",
+    "phone": "Telefon",
+    "phoneHelp": "Kontakt-Telefonnummer",
+    "phoneNotSpecified": "Telefon nicht angegeben",
+    "email": "E-Mail",
+    "emailHelp": "Kontakt-E-Mail-Adresse",
+    "emailNotSpecified": "E-Mail nicht angegeben",
+    "description": "Beschreibung",
+    "descriptionHelp": "Eine kurze Beschreibung des Hotels (optional)",
+    "actions": "Aktionen",
+    "editButton": "Bearbeiten",
+    "deleteButton": "Löschen",
+    "viewRoomsButton": "Zimmer anzeigen",
+    "noHotels": "Sie haben noch keine Hotels hinzugefügt",
+    "addFirstHotel": "Fügen Sie Ihr erstes Hotel hinzu, um mit der Verwaltung von Zimmern und Check-in-Nachrichten zu beginnen.",
+    "updateSuccess": "Hotel erfolgreich aktualisiert!",
+    "addSuccess": "Hotel erfolgreich hinzugefügt!"
+  },
+  "rooms": {
+    "title": "Zimmer verwalten",
+    "addButton": "Zimmer hinzufügen",
+    "name": "Name",
+    "calendarUrl": "Kalender-URL",
+    "whatsappNumber": "WhatsApp-Nummer",
+    "templateName": "Vorlagenname",
+    "actions": "Aktionen",
+    "editButton": "Bearbeiten",
+    "deleteButton": "Löschen",
+    "settings": "Einstellungen",
+    "autoSend": "Automatisch senden",
+    "sendTime": "Sendezeit"
+  },
+  "sendMessage": {
+    "title": "Manuelle Nachricht senden",
+    "hotel": "Hotel",
+    "room": "Zimmer",
+    "guestName": "Gästename",
+    "phone": "Telefon",
+    "template": "Vorlage",
+    "sendButton": "Nachricht senden",
+    "success": "Nachricht erfolgreich gesendet!"
+  },
+  "messages": {
+    "title": "Nachrichtenverlauf",
+    "hotel": "Hotel",
+    "room": "Zimmer",
+    "date": "Datum",
+    "template": "Vorlage",
+    "status": "Status",
+    "content": "Inhalt",
+    "filterButton": "Filtern",
+    "resetButton": "Zurücksetzen",
+    "statsTitle": "Nachrichtenstatistiken",
+    "totalMessages": "Gesamtnachrichten"
+  },
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "reset": "Zurücksetzen",
+    "yes": "Ja",
+    "no": "Nein",
+    "success": "Erfolg",
+    "error": "Fehler",
+    "loading": "Wird geladen...",
+    "noData": "Keine Daten",
+    "logout": "Abmelden",
+    "profile": "Profil",
+    "language": "Sprache"
+  },
+  "languages": {
+    "ro": "Rumänisch",
+    "en": "Englisch",
+    "de": "Deutsch",
+    "hu": "Ungarisch",
+    "pl": "Polnisch"
+  }
+}
