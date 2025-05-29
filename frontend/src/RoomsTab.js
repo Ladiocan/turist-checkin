@@ -37,6 +37,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TemplateIcon from '@mui/icons-material/Description';
 import ScheduleIcon from '@mui/icons-material/Schedule';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -58,6 +59,7 @@ export default function RoomsTab() {
     calendar_url: "", 
     template_name: "oberth" 
   });
+  // State pentru setări de automatizare cu valori implicite sigure
   const [settings, setSettings] = useState({
     auto_send: true,
     send_time: new Date(new Date().setHours(11, 0, 0, 0)),
@@ -98,9 +100,58 @@ export default function RoomsTab() {
   const fetchRooms = async (hotelId) => {
     setLoading(true);
     try {
-      const response = await getRooms(hotelId);
-      setRooms(response);
+      // Obținem lista de camere
+      const roomsResponse = await getRooms(hotelId);
+      
+      // Pentru fiecare cameră, încearcăm să obținem setările
+      const roomsWithSettings = await Promise.all(roomsResponse.map(async (room) => {
+        try {
+          // Încearcăm să obținem setările pentru această cameră
+          const settings = await getRoomSettings(room.id);
+          
+          // Formatăm ora pentru afișare
+          let autoSendTime = "11:00";
+          
+          if (settings?.send_time) {
+            try {
+              // Verificăm dacă e string de tipul HH:MM:SS
+              if (typeof settings.send_time === 'string' && settings.send_time.includes(':')) {
+                // Extragem doar HH:MM din HH:MM:SS
+                autoSendTime = settings.send_time.split(':').slice(0, 2).join(':');
+              } else {
+                // Încearcăm să formatăm ca dată
+                const timeDate = new Date(settings.send_time);
+                if (!isNaN(timeDate.getTime())) {
+                  autoSendTime = timeDate.getHours().toString().padStart(2, '0') + ':' + 
+                                timeDate.getMinutes().toString().padStart(2, '0');
+                }
+              }
+            } catch (e) {
+              console.error("Eroare la formatarea orei:", e);
+            }
+          }
+          
+          // Returnăm camera cu setările adăugate
+          return {
+            ...room,
+            auto_send: settings?.auto_send ?? true,
+            auto_send_time: autoSendTime,
+            has_settings: true
+          };
+        } catch (e) {
+          // Dacă nu există setări, folosim valorile implicite
+          return {
+            ...room,
+            auto_send: true,
+            auto_send_time: "11:00",
+            has_settings: false
+          };
+        }
+      }));
+      
+      setRooms(roomsWithSettings);
     } catch (error) {
+      console.error("Eroare la încărcarea camerelor:", error);
       setSnackbar({ 
         open: true, 
         message: "Eroare la încărcarea camerelor: " + (error.response?.data?.detail || error.message), 
@@ -131,19 +182,56 @@ export default function RoomsTab() {
       // Încearcă să obțină setările existente pentru cameră
       const roomSettings = await getRoomSettings(room.id);
       
-      // Setează valorile implicite dacă nu există setări
+      // Creăm o dată validă pentru ora implicită (11:00)
+      const defaultTime = new Date();
+      defaultTime.setHours(11, 0, 0, 0);
+      
+      // Procesam ora din setări dacă există
+      let timeValue;
+      if (roomSettings?.send_time) {
+        try {
+          // Încearcăm să creăm un obiect Date valid din string-ul de timp
+          if (typeof roomSettings.send_time === 'string' && roomSettings.send_time.includes(':')) {
+            // Dacă e format 'HH:MM:SS', transformăm în Date
+            const [hours, minutes, seconds] = roomSettings.send_time.split(':').map(Number);
+            const timeDate = new Date();
+            timeDate.setHours(hours || 11, minutes || 0, seconds || 0, 0);
+            timeValue = timeDate;
+          } else {
+            // Încearcăm să parsam direct
+            timeValue = new Date(roomSettings.send_time);
+            
+            // Verificăm dacă data rezultată e validă
+            if (isNaN(timeValue.getTime())) {
+              timeValue = defaultTime;
+            }
+          }
+        } catch (e) {
+          console.error("Eroare la parsarea timpului:", e);
+          timeValue = defaultTime;
+        }
+      } else {
+        timeValue = defaultTime;
+      }
+      
+      // Setează valorile în state
       setSettings({
         auto_send: roomSettings?.auto_send ?? true,
-        send_time: roomSettings?.send_time ? new Date(roomSettings.send_time) : new Date(new Date().setHours(11, 0, 0, 0)),
+        send_time: timeValue,
         room_id: room.id
       });
       
       setSettingsOpen(true);
     } catch (error) {
+      console.error("Eroare la încărcarea setărilor:", error);
+      
       // Dacă nu există setări, setează valorile implicite
+      const defaultTime = new Date();
+      defaultTime.setHours(11, 0, 0, 0);
+      
       setSettings({
         auto_send: true,
-        send_time: new Date(new Date().setHours(11, 0, 0, 0)),
+        send_time: defaultTime,
         room_id: room.id
       });
       setSettingsOpen(true);
@@ -212,13 +300,31 @@ export default function RoomsTab() {
   
   const handleSaveSettings = async () => {
     try {
+      setLoading(true);
+      // Verificăm dacă avem o valoare validă pentru ora de trimitere
+      if (!settings.send_time || !(settings.send_time instanceof Date) || isNaN(settings.send_time)) {
+        // Dacă nu avem o valoare validă, folosim ora implicită (11:00)
+        settings.send_time = new Date(new Date().setHours(11, 0, 0, 0));
+      }
+      
       // Formatează ora pentru a fi trimisă la server
       const formattedSettings = {
         ...settings,
-        send_time: format(settings.send_time, 'HH:mm:ss')
+        send_time: format(new Date(settings.send_time), 'HH:mm:ss')
       };
       
       await updateRoomSettings(settings.room_id, formattedSettings);
+      
+      // Actualizăm lista de camere pentru a reflecta modificările
+      if (selectedHotel) {
+        await fetchRooms(selectedHotel);
+      }
+      
+      // Trimitem un eveniment personalizat pentru a notifica alte componente despre schimbarea setărilor
+      const event = new CustomEvent('roomSettingsChanged', { 
+        detail: { roomId: settings.room_id, settings: formattedSettings } 
+      });
+      document.dispatchEvent(event);
       
       setSnackbar({ 
         open: true, 
@@ -228,11 +334,14 @@ export default function RoomsTab() {
       
       handleCloseSettings();
     } catch (error) {
+      console.error("Eroare la salvarea setărilor:", error);
       setSnackbar({ 
         open: true, 
         message: "Eroare la salvarea setărilor: " + (error.response?.data?.detail || error.message), 
         severity: "error" 
       });
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -306,9 +415,21 @@ export default function RoomsTab() {
                   </Box>
                   
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <WhatsAppIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                    <Box 
+                      sx={{ 
+                        width: 10, 
+                        height: 10, 
+                        borderRadius: '50%', 
+                        bgcolor: room.auto_send ? 'success.main' : 'error.main',
+                        mr: 1,
+                        display: 'inline-block',
+                        boxShadow: '0 0 4px rgba(0,0,0,0.2)'
+                      }} 
+                    />
+                    <ScheduleIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
                     <Typography variant="body2">
-                      {room.whatsapp_number || "WhatsApp nespecificat"}
+                      Trimitere automată: {room.auto_send_time ? room.auto_send_time : "11:00"}
+                      {room.auto_send ? ' (activă)' : ' (inactivă)'}
                     </Typography>
                   </Box>
                   
@@ -414,48 +535,121 @@ export default function RoomsTab() {
       </Dialog>
       
       {/* Dialog pentru setări de automatizare */}
-      <Dialog open={settingsOpen} onClose={handleCloseSettings} maxWidth="sm" fullWidth>
-        <DialogTitle>Setări de automatizare mesaje</DialogTitle>
-        <DialogContent>
-          <Box sx={{ mt: 2 }}>
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={settings.auto_send}
-                  onChange={(e) => handleSettingsChange('auto_send', e.target.checked)}
-                  color="primary"
-                />
-              }
-              label="Trimite mesaje automat"
-            />
-            
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 1, mb: 2 }}>
-              Dacă este activat, sistemul va trimite automat mesaje de check-in la ora specificată pentru rezervările din ziua curentă.
-            </Typography>
-            
-            <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ro}>
-              <TimePicker
-                label="Ora de trimitere mesaje"
-                value={settings.send_time}
-                onChange={(newTime) => handleSettingsChange('send_time', newTime)}
-                disabled={!settings.auto_send}
-                slotProps={{ textField: { fullWidth: true, margin: 'normal' } }}
+      <Dialog 
+        open={settingsOpen} 
+        onClose={handleCloseSettings} 
+        maxWidth="sm" 
+        fullWidth
+        PaperProps={{
+          elevation: 8,
+          sx: { 
+            borderRadius: 2,
+            overflow: 'hidden'
+          }
+        }}
+      >
+        <DialogTitle sx={{ 
+          bgcolor: 'primary.main', 
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1
+        }}>
+          <ScheduleIcon />
+          Setări de automatizare mesaje
+        </DialogTitle>
+        
+        <DialogContent sx={{ py: 3 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            {/* Secțiunea de activare/dezactivare */}
+            <Box sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'space-between',
+              bgcolor: settings.auto_send ? 'success.light' : 'grey.100',
+              p: 2,
+              borderRadius: 2,
+              transition: 'background-color 0.3s'
+            }}>
+              <Box>
+                <Typography variant="subtitle1" fontWeight="bold">
+                  {settings.auto_send ? 'Automatizare activată' : 'Automatizare dezactivată'}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {settings.auto_send 
+                    ? 'Mesajele vor fi trimise automat în fiecare zi.' 
+                    : 'Mesajele trebuie trimise manual.'}
+                </Typography>
+              </Box>
+              
+              <Switch
+                checked={settings.auto_send}
+                onChange={(e) => handleSettingsChange('auto_send', e.target.checked)}
+                color="primary"
+                sx={{ '& .MuiSwitch-switchBase.Mui-checked': { color: 'success.main' } }}
               />
-            </LocalizationProvider>
+            </Box>
             
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-              Mesajele vor fi trimise automat la ora {format(settings.send_time, 'HH:mm')} pentru toate rezervările din ziua curentă.
-            </Typography>
+            {/* Secțiunea pentru setarea orei */}
+            <Box sx={{ 
+              p: 2, 
+              borderRadius: 2, 
+              border: '1px solid',
+              borderColor: settings.auto_send ? 'primary.light' : 'grey.300',
+              opacity: settings.auto_send ? 1 : 0.7,
+              transition: 'all 0.3s'
+            }}>
+              <Typography variant="subtitle1" fontWeight="bold" sx={{ mb: 2 }}>
+                Ora de trimitere automată
+              </Typography>
+              
+              <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ro}>
+                <TimePicker
+                  label="Selectează ora"
+                  value={settings.send_time}
+                  onChange={(newTime) => handleSettingsChange('send_time', newTime)}
+                  disabled={!settings.auto_send}
+                  slotProps={{ 
+                    textField: { 
+                      fullWidth: true, 
+                      variant: "outlined",
+                      InputProps: {
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <ScheduleIcon color={settings.auto_send ? "primary" : "disabled"} />
+                          </InputAdornment>
+                        ),
+                      }
+                    } 
+                  }}
+                />
+              </LocalizationProvider>
+              
+              {settings.auto_send && settings.send_time && (
+                <Alert severity="info" sx={{ mt: 2 }}>
+                  Mesajele vor fi trimise automat în fiecare zi la ora <strong>{format(new Date(settings.send_time), 'HH:mm')}</strong> pentru toate rezervările cu check-in în ziua respectivă.
+                </Alert>
+              )}
+            </Box>
           </Box>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseSettings}>Anulează</Button>
+        
+        <DialogActions sx={{ px: 3, py: 2, bgcolor: 'grey.50' }}>
+          <Button 
+            onClick={handleCloseSettings} 
+            variant="outlined"
+            startIcon={<DeleteIcon />}
+          >
+            Anulează
+          </Button>
           <Button 
             onClick={handleSaveSettings} 
             variant="contained" 
             color="primary"
+            startIcon={<CheckCircleIcon />}
+            disabled={loading}
           >
-            Salvează setările
+            {loading ? <CircularProgress size={24} /> : 'Salvează setările'}
           </Button>
         </DialogActions>
       </Dialog>

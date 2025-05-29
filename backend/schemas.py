@@ -84,9 +84,11 @@ class MessageSent(MessageSentBase):
 class MessageSentStats(BaseModel):
     hotel_id: int
     hotel_name: str
+    room_id: Optional[int] = None
+    room_name: Optional[str] = None
     total_messages: int
-    start_date: str
-    end_date: str
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
     
     class Config:
         from_attributes = True

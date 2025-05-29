@@ -111,6 +111,27 @@ def messages_stats(db: Session, hotel_id: int = None, start_date: str = None, en
     query = query.group_by(models.MessageSent.hotel_id)
     return query.all()
 
+def messages_stats_by_room(db: Session, hotel_id: int = None, start_date: str = None, end_date: str = None):
+    """
+    Get message statistics grouped by room
+    """
+    from sqlalchemy import func
+    query = db.query(
+        models.MessageSent.room_id,
+        models.MessageSent.hotel_id,
+        func.count(models.MessageSent.id).label('total_messages')
+    )
+    
+    if hotel_id:
+        query = query.filter(models.MessageSent.hotel_id == hotel_id)
+    if start_date:
+        query = query.filter(models.MessageSent.sent_date >= start_date)
+    if end_date:
+        query = query.filter(models.MessageSent.sent_date <= end_date)
+    
+    query = query.group_by(models.MessageSent.room_id, models.MessageSent.hotel_id)
+    return query.all()
+
 # --- Room Settings CRUD ---
 def get_room_settings(db: Session, room_id: int):
     return db.query(models.RoomSettings).filter(models.RoomSettings.room_id == room_id).first()

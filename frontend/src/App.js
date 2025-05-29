@@ -29,6 +29,7 @@ import SearchAndSendButton from "./SearchAndSendButton";
 import LoginPage from "./LoginPage";
 import { getUserProfile } from "./api";
 import LanguageSelector from "./components/LanguageSelector";
+import AITestPage from "./components/AITestPage";
 
 // Import i18n instance
 import "./i18n";
@@ -117,6 +118,10 @@ function MainApp() {
                 <MenuItem disabled>
                   <Typography variant="body2">{user.email}</Typography>
                 </MenuItem>
+                <MenuItem onClick={() => window.location.href = '/ai-test'}>
+                  <Typography variant="body2">Testare AI WhatsApp</Typography>
+                </MenuItem>
+                <Divider />
                 <MenuItem onClick={handleLogout}>
                   <LogoutIcon fontSize="small" sx={{ mr: 1 }} />
                   {t('common.logout')}
@@ -172,6 +177,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainApp />} />
+        <Route path="/ai-test" element={<AITestPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

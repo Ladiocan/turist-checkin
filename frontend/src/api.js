@@ -98,6 +98,14 @@ export const sendManualMessage = async (data) => {
   return response.data;
 };
 
+export const sendBulkMessages = async (data) => {
+  // Trimite mesaje în bulk către o listă de numere de telefon
+  const response = await axios.post("/messages/bulk", data, {
+    headers: getAuthHeader()
+  });
+  return response.data;
+};
+
 export const getMessages = async (params) => {
   const response = await axios.get("/messages", {
     params,
