@@ -35,3 +35,17 @@ services:
         value: your-smtp-password  # Add your SMTP password here
       - key: SMTP_FROM
         value: contact@turistintransilvania.com
+
+  # Baza de date PostgreSQL
+  - type: pserv
+    name: turist-checkin-db
+    env: docker
+    plan: free
+    repo: https://github.com/render-examples/postgres-docker.git
+    envVars:
+      - key: POSTGRES_USER
+        value: turist_checkin
+      - key: POSTGRES_PASSWORD
+        generateValue: true
+      - key: POSTGRES_DB
+        value: turist_checkin_db
