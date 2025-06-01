@@ -12,5 +12,5 @@ requests==2.26.0
 pydantic[email]==1.8.2
 python-magic==0.4.24
 Pillow==8.4.0
-python-icalendar>=5.0.0
+icalendar>=5.0.0
 httpx==0.23.0
