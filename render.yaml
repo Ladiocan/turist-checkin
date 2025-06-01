@@ -18,4 +18,6 @@ services:
       - key: ACCESS_TOKEN_EXPIRE_MINUTES
         value: "30"
       - key: FRONTEND_URL
-        value: https://your-vercel-app.vercel.app  # Va trebui actualizat după deploy-ul pe Vercel
+        value: https://your-vercel-app.vercel.app  # Update this after Vercel deploy
+      - key: HUGGINGFACE_API_KEY
+        value: your-huggingface-api-key  # Add your Hugging Face API key here
